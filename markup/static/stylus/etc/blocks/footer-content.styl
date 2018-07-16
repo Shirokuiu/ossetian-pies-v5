@@ -1,0 +1,101 @@
+.footer-content
+  box-sizing border-box
+  min-height 255px
+  
+  padding-top 20px
+  padding-bottom 16px
+  
+  background-color #f5f5dd
+  .container
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    
+.footer-content__description
+  padding 0 6.95%
+    
+.footer-content__block-left
+  padding-top 18px
+  
+.footer-content__block-middle
+  width: 36.2%;
+
+.footer-content__copyright
+  margin-top auto
+  
+  font-size 16px
+  line-height 19px
+  font-weight 300
+  color #4d4d4d
+  
+.footer-content__row-bottom-developers
+  &:hover
+    .footer-content__row-bottom-developers-text
+      color #ff5900
+      &::after
+        width 0
+
+        opacity 0
+  
+.footer-content__row-bottom-developers-text
+  position relative
+  
+  padding-bottom 3px
+  
+  font-size 16px
+  line-height 19px
+  font-weight 300
+  color #000000
+  &::after
+    content ''
+    
+    position absolute
+    left 0
+    bottom 0
+    
+    width 100%
+    height 1px
+    
+    background-color #000000
+    
+    opacity 1
+    
+    transition 0.3s ease
+    
+.footer-content__block-right
+  padding-top 6px
+    
+.footer-content__row-bottom-developers-icon
+  width 142px
+  height 40px
+  margin-left 25px
+  
+  background-image url('%=static=%content/developers.png')
+  background-repeat no-repeat
+  background-size 100% auto
+  
+.footer-content__yandex-metrica
+  width: 88px;
+  height: 31px;
+  margin-top auto
+  margin-left auto
+  margin-bottom 25px
+  background-image: url('%=static=%content/yandex-analytics.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  
+.footer-content__block-right-payment-link
+  background-repeat no-repeat
+  background-size 100% auto
+  &--mastercard
+    width 63px
+    height 39px
+    margin-right 15px
+    
+    background-image url('%=static=%content/mastercard.png')
+  &--visa
+    width 64px
+    height 19px
+    
+    background-image url('%=static=%content/visa.png')

@@ -1,0 +1,103 @@
+.main-nav
+  position relative
+  
+  height 100%
+  
+  background-color #fed851
+  
+  opacity 1
+  
+  transition 0.3s ease
+  &--close
+    visibility hidden
+    height 0
+    
+    opacity 0
+  
+.main-nav__content
+  position relative
+  
+  box-shadow: inset 1px 13px 11px -15px rgba(0,0,0,0.5);
+  
+.main-nav__list-items
+  width: 8.5%;
+  
+.main-nav__list-link
+  position relative
+  
+  padding 18px 20px
+  
+  transition 0.2s ease
+  &::before
+    content ''
+    
+    position absolute
+    top -15px
+    left 0
+    right 0
+    
+    display none
+    width 21px
+    height 16px
+    margin auto
+    
+    background-image url('%=static=%content/main-nav-active.png')
+    background-repeat no-repeat
+    background-size 21px 16px
+  &:hover
+    background-color rgba(255, 255, 255, 0.5)
+    .main-nav__list-link-icon
+      .cow-head,
+      .rooster,
+      .cabbage,
+      .potato,
+      .bell-pepper,
+      .cheese,
+      .big-piranha,
+      .lemon,
+      .mountain,
+      .leaf
+        fill #fc4e3d
+  &--active
+    background-color rgba(255, 255, 255, 0.5)
+    .main-nav__list-link-icon
+      .cow-head,
+      .rooster,
+      .cabbage,
+      .potato,
+      .bell-pepper,
+      .cheese,
+      .big-piranha,
+      .lemon,
+      .mountain,
+      .leaf
+        fill #fc4e3d
+    &::before
+      display block
+  
+.main-nav__list-link-icon
+  width 32px
+  height 32px
+  margin 0 auto 14px auto
+  .cow-head,
+  .rooster,
+  .cabbage,
+  .potato,
+  .bell-pepper,
+  .cheese,
+  .big-piranha,
+  .lemon,
+  .mountain,
+  .leaf
+    width 32px
+    height 32px
+    
+    fill #6f5e24
+    
+    transition 0.2s ease
+    
+.main-nav__list-text
+  font-size 16px
+  line-height 19px
+  font-weight 400
+  color #4d431a

@@ -1,0 +1,234 @@
+.cart
+  width: 16.54%;
+  margin-bottom 25px
+  padding-bottom 14px
+  
+  border 1px solid #e9e8e4
+  
+.cart__img-wrap
+  margin-bottom 20px
+  padding 17px 15px
+  padding-bottom 0
+  
+.cart__description
+  flex-grow 1
+  
+  padding 0 5px
+  
+.cart__title
+  align-self center
+  margin-bottom 15px
+  padding 0 10px
+  
+  font-size 17px
+  line-height 20px
+  font-weight 400
+  color #395ac2
+  
+.cart__select-price
+  position relative
+  
+  margin-top auto
+  margin-bottom 19px
+  padding-top 10px
+  padding-left 5px
+  padding-right 5px
+  
+  border-top 1px solid #e8e8e8
+  &--open
+    .cart__select-price-val
+      border-bottom-color transparent
+      .cart__select-price-val-arrow
+        &::before,
+        &::after
+          background-color #ff5900
+      &:hover
+        border-color #e9e8e4
+        border-bottom-color transparent
+    .cart__select-price-description
+      display block
+  
+.cart__select-price-val
+  position relative
+  
+  padding 9px 10px
+  padding-right 35px
+  
+  border 2px solid #e9e8e4
+  
+  cursor pointer
+  
+  transition 0.2s ease
+  &:hover
+    border-color #F0E591
+    .cart__select-price-val-arrow
+      &::before,
+      &::after
+        background-color #ff5900
+  
+.cart__select-price-val-arrow
+  position absolute
+  top 4px
+  right 10px
+  bottom 0
+  
+  width 14px
+  height 9px
+  margin auto
+  &::before,
+  &::after
+    center-absolute()
+    
+    content ''
+    
+    width: 66%;
+    height 2px
+    
+    background-color #c8c8c8
+    
+    transition 0.2s ease
+  &::before
+    left -5px
+    
+    transform rotate(45deg)
+  &::after
+    right -5px
+    
+    transform rotate(-45deg)
+    
+.cart__select-price-weight-icon
+  width 20px
+  height 20px
+  margin-right 9px
+  .scale
+    width 20px
+    height 20px
+    
+    fill #aeaeae
+    
+.cart__select-price-weight,
+.cart__select-price-size,
+.cart__select-price-total
+  margin-top auto
+  
+  font-family 'Gill-Sans-Nova', sans-serif
+  font-size 17px
+  line-height 20px
+  font-weight 600
+  color #3a3a3a
+  
+.cart__select-price-weight-text,
+.cart__select-price-size-text,
+.cart__select-price-total-text
+  margin-left 5px
+  
+  font-family 'Gill-Sans-Nova', sans-serif
+  font-size 19px
+  line-height 23px
+  font-weight 600
+  color #3a3a3a
+  
+.cart__select-price-size-icon
+  width 20px
+  height 20px
+  margin-right 9px
+  
+  background-image url('%=static=%content/size.png')
+  background-repeat no-repeat
+  background-size 100% auto
+  
+.cart__select-price-total,
+.cart__select-price-total-text
+  color #fc5920
+  
+.cart__select-price-description
+  position absolute
+  left 0
+  right 0
+  z-index 20
+  
+  box-sizing border-box
+  display none
+  width 96.4%
+  margin auto
+  padding 0
+  
+  background-color #ffffff
+  
+  border: 2px solid #e9e8e4;
+  border-top none
+  
+  transform: translateY(-1px);
+  
+.cart__select-price-description-items
+  padding: 9px 17px;
+  padding-left 10px
+  
+  cursor pointer
+  
+  transition 0.2s ease
+  &:hover
+    background-color rgba(240, 229, 145, 0.6)
+  
+.cart__calculate
+  box-sizing border-box
+  width 92px
+  
+  border 2px solid #e9e8e4
+  
+.cart__row-bottom-wrap
+  padding 0 5px
+  
+.cart__calculate-button
+  reset-button()
+  
+  position relative
+  
+  height 34px
+  padding-left 15px
+  &::before,
+  &::after
+    center-absolute()
+    
+    content ''
+    
+    
+    width 46%
+    height 2px
+    
+    background-color #555555
+  &::before
+    transform rotate(90deg)
+  &--minus
+    &::before
+      display none
+  
+.cart__calculate-number
+  font-family 'Gill-Sans-Nova', sans-serif
+  font-size 19px
+  line-height 31px
+  font-weight 600
+  color #3a3a3a
+  
+.cart__add-button
+  reset-button()
+  
+  width 165px
+  
+  font-size 15px
+  line-height 18px
+  font-weight 400
+  color #ffffff
+  
+  background-color #669af0
+  
+  border-radius 5px
+  
+  transition 0.2s ease
+  &:hover
+    background-color #2993FC
+    
+
+  
+  
+    

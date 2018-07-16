@@ -1,0 +1,98 @@
+.info
+  &--footer
+    .info__feedback-link
+      margin-left 0
+
+.info__delivery-icon,
+.info__time-icon
+  width 32px
+  height 32px
+  margin-right 15px
+  .shipped
+    width 32px
+    height 32px
+    
+    fill #1f1f1f
+    
+.info__time-icon
+  width 25px
+  height 25px
+  margin-right 15px
+  .clock
+    width 25px
+    height 25px
+    
+    fill #1f1f1f
+  
+  
+.info__delivery-title,
+.info__time-title
+  margin-bottom 11px
+  
+  font-size 19px
+  line-height 23px
+  font-weight 500
+  color #3a3a3a
+  
+.info__delivery-title-span
+  margin-left 7px
+  
+  color #ff5900
+  
+.info__delivery-text,
+.info__time-text
+  font-size 16px
+  line-height 19px
+  font-weight 400
+  color #808080
+  
+.info__delivery-text-span
+  margin-left 6px
+  
+  color #ff5900
+  font-weight 500
+  
+.info__feedback-tel
+  margin-bottom 5px
+  
+  font-size 24px
+  line-height 29px
+  font-weight 500
+  color #3a3a3a
+  
+.info__feedback-link
+  position relative
+  
+  margin-left auto
+  padding-bottom 3px
+  
+  font-size 16px
+  line-height 19px
+  font-weight 400
+  color #000000
+  
+  transition 0.3s ease
+  &::after
+    content ''
+    
+    position absolute
+    left 0
+    bottom 0
+    
+    width 100%
+    height 1px
+    margin auto
+    
+    background-color #000000
+    
+    opacity 1
+    
+    transition 0.3s ease
+  &:hover
+    color #377ad4
+    &::after
+      width 0
+      
+      opacity 0
+    
+    

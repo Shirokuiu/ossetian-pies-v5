@@ -1,0 +1,307 @@
+doctype html
+html(class="no-js", lang="ru")
+  include ../components/head/head.pug
+  head
+    +head(head.defaults)
+  body.page
+    |%=symbols=%
+
+    .wrapper
+      .content
+        header.page-header
+          .container
+            .page-header__row-top.row.row--jc-sb
+              .logo.row.row--ai-c
+                .logo__img-wrap
+                  img.logo__img(src="%=static=%img/content/logo.svg" alt="Логотип")
+                .logo__description
+                  h2.logo__title.text «Вкусная Осетия»
+                  p.logo__text.text сеть пекарен осетинские пироги
+              ul.info.list.row.row--jc-sb.grow
+                li.info__delivery.row.row--ai-c
+                  span.info__delivery-icon
+                    != pugHelpers.Icon.call(locals, {iconName: 'shipped', className: 'shipped'})
+                  .info__delivery-description
+                    h2.info__delivery-title.text Доставка осетинских пирогов
+                      span.info__delivery-title-span Москва
+                    p.info__delivery-text.text Среднее время доставки
+                      span.info__delivery-text-span 35 минут
+                li.info__time.row.row--ai-c
+                  span.info__time-icon
+                    != pugHelpers.Icon.call(locals, {iconName: 'clock', className: 'clock'})
+                  .info__time-description
+                    h2.info__time-title.text Время работы пекарни:
+                    p.info__time-text.text ПН-СБ с 9:00 до 21:00 ВС с 9:00 до 20:00
+                li.info__feedback.column
+                  a.info__feedback-tel.text--td-none(href="tel:84953330060") 8 495 333-00-60
+                  a.info__feedback-link.text--td-none(href="#") Обратный звонок
+            .page-header__row-middle
+              .user-block.row.row--jc-c.row--ai-c
+                .user-block__dropdown-button-wrap.user-block__dropdown-button-wrap--open.row.row--ai-c
+                  button.user-block__dropdown-button(type="button") Осетинские пироги
+                  span.user-block__dropdown-button-span
+                ul.user-block__list.list.row.row--jc-sb
+                  li.user-block__list-items
+                    a.user-block__list-link.text--td-none(href="#") Доставка
+                  li.user-block__list-items
+                    a.user-block__list-link.text--td-none(href="#") Оплата
+                  li.user-block__list-items
+                    a.user-block__list-link.text--td-none(href="#") Акции
+                  li.user-block__list-items
+                    a.user-block__list-link.text--td-none(href="#") Отзывы
+                  li.user-block__list-items
+                    a.user-block__list-link.text--td-none(href="#") Контакты
+                .user-block__search.row
+                  .user-block__search-input-wrap.grow
+                    input.user-block__search-input.input(type="text" placeholder="Поиск по сайту")
+                    span.user-block__search-input-icon.d-block
+                      != pugHelpers.Icon.call(locals, {iconName: 'search', className: 'search'})
+                  button.user-block__search-button(type="button") Найти
+                .user-block__basket.row.row--ai-c
+                  a.user-block__basket-link.text--td-none.text--center(href="#") Корзина
+                  .user-block__basket-description
+                    .user-block__basket-text-price-wrap.row
+                      p.user-block__basket-text.user-block__basket-text--price.text 2500
+                      p.user-block__basket-text.user-block__basket-text--currency.text руб.
+                    .user-block__basket-text-count-wrap.row
+                      p.user-block__basket-text.user-block__basket-text--count.text 12
+                      p.user-block__basket-text.user-block__basket-text--goods.text товаров
+          .page-header__row-bottom
+            nav.main-nav
+              .main-nav__border
+              .main-nav__content
+                .container
+                  ul.main-nav__list.list.row.row--jc-c
+                    li.main-nav__list-items
+                      a.main-nav__list-link.text--td-none.d-block(href="#")
+                        span.main-nav__list-link-icon.d-block
+                          != pugHelpers.Icon.call(locals, {iconName: 'cow-head', className: 'cow-head'})
+                        span.main-nav__list-text.text--center.d-block пироги
+                        span.main-nav__list-text.text--center.d-block с говядиной
+                    li.main-nav__list-items
+                      a.main-nav__list-link.main-nav__list-link--active.text--td-none.d-block(href="#")
+                        span.main-nav__list-link-icon.d-block
+                          != pugHelpers.Icon.call(locals, {iconName: 'rooster', className: 'rooster'})
+                        span.main-nav__list-text.text--center.d-block пироги
+                        span.main-nav__list-text.text--center.d-block с птицей
+                    li.main-nav__list-items
+                      a.main-nav__list-link.text--td-none.d-block(href="#")
+                        span.main-nav__list-link-icon.d-block
+                          != pugHelpers.Icon.call(locals, {iconName: 'cabbage', className: 'cabbage'})
+                        span.main-nav__list-text.text--center.d-block пироги
+                        span.main-nav__list-text.text--center.d-block с капустой
+                    li.main-nav__list-items
+                      a.main-nav__list-link.text--td-none.d-block(href="#")
+                        span.main-nav__list-link-icon.d-block
+                          != pugHelpers.Icon.call(locals, {iconName: 'potato', className: 'potato'})
+                        span.main-nav__list-text.text--center.d-block пироги
+                        span.main-nav__list-text.text--center.d-block с картошкой
+                    li.main-nav__list-items
+                      a.main-nav__list-link.text--td-none.d-block(href="#")
+                        span.main-nav__list-link-icon.d-block
+                          != pugHelpers.Icon.call(locals, {iconName: 'bell-pepper', className: 'bell-pepper'})
+                        span.main-nav__list-text.text--center.d-block пироги
+                        span.main-nav__list-text.text--center.d-block с овощами
+                    li.main-nav__list-items
+                      a.main-nav__list-link.text--td-none.d-block(href="#")
+                        span.main-nav__list-link-icon.d-block
+                          != pugHelpers.Icon.call(locals, {iconName: 'cheese', className: 'cheese'})
+                        span.main-nav__list-text.text--center.d-block пироги
+                        span.main-nav__list-text.text--center.d-block с сыром
+                    li.main-nav__list-items
+                      a.main-nav__list-link.text--td-none.d-block(href="#")
+                        span.main-nav__list-link-icon.d-block
+                          != pugHelpers.Icon.call(locals, {iconName: 'big-piranha', className: 'big-piranha'})
+                        span.main-nav__list-text.text--center.d-block пироги
+                        span.main-nav__list-text.text--center.d-block с рыбой
+                    li.main-nav__list-items
+                      a.main-nav__list-link.text--td-none.d-block(href="#")
+                        span.main-nav__list-link-icon.d-block
+                          != pugHelpers.Icon.call(locals, {iconName: 'lemon', className: 'lemon'})
+                        span.main-nav__list-text.text--center.d-block пироги
+                        span.main-nav__list-text.text--center.d-block сладкие
+                    li.main-nav__list-items
+                      a.main-nav__list-link.text--td-none.d-block(href="#")
+                        span.main-nav__list-link-icon.d-block
+                          != pugHelpers.Icon.call(locals, {iconName: 'mountain', className: 'mountain'})
+                        span.main-nav__list-text.text--center.d-block пироги
+                        span.main-nav__list-text.text--center.d-block традиционные
+                    li.main-nav__list-items
+                      a.main-nav__list-link.text--td-none.d-block(href="#")
+                        span.main-nav__list-link-icon.d-block
+                          != pugHelpers.Icon.call(locals, {iconName: 'leaf', className: 'leaf'})
+                        span.main-nav__list-text.text--center.d-block постные
+                        span.main-nav__list-text.text--center.d-block пироги
+            .breadcrumbs
+              .container
+                ul.breadcrumbs__list.list.row
+                  li.breadcrumbs__items
+                    a.breadcrumbs__link.text--td-none(href='#') Главная
+                  li.breadcrumbs__items
+                    span.breadcrumbs__item-span /
+                    a.breadcrumbs__link.text--td-none(href='#') Каталог пирогов
+                      
+        main.page-content
+          .description
+            .container
+              h2.description__title.text.text--center Осетинские пироги с бесплатной доставкой в Москве
+              p.description__text.text Заказать осетинские пироги в Москве с доставкой можно с 8:00 до 21:00 по телефону +7 (495) 324-90-00 или круглосуточно на сайте через корзину. На ваш выбор мы предлагаем услуги 4 пекарен, в которых выпекаются осетинские пироги на любой вкус - сладкие, мясные, с капустой, сырные и другие. Заказ осетинских пирогов в Москве с доставкой на дом и в офис выполняется оперативно: приготовление занимает 25-45 минут, а доставка точно ко времени за 45 минут! Вы получите их еще горячими, только с печи!
+            .description__border
+          .carts-content
+            .container
+              h2.carts-content__title.text.text--center Осетинские пироги с говядиной
+              .carts-content__wrap.row.row--wrap
+                - for (let i = 0; i < 7; i++)
+                  .cart.column
+                    .cart__img-wrap
+                      img.cart__img(src="%=static=%img/content/cart-img.jpg")
+                    .cart__description.column
+                      a.cart__title.text--td-none(href="#") Осетинский пирог с говядиной
+                      .cart__select-price
+                        .cart__select-price-val.row.row--jc-sb.row--ai-c
+                          span.cart__select-price-val-arrow.d-block
+                          .cart__select-price-weight-wrap.row.row--ai-c
+                            span.cart__select-price-weight-icon
+                              != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                            .cart__select-price-weight-text-wrap.row
+                              p.cart__select-price-weight.text 800
+                              span.cart__select-price-weight-text г.
+                          .cart__select-price-size-wrap.row.row--ai-c
+                            span.cart__select-price-size-icon
+                            .cart__select-price-size-text-wrap.row
+                              p.cart__select-price-size.text 25
+                              span.cart__select-price-size-text см
+                          .cart__select-price-total-wrap.row.row--ai-c
+                            .cart__select-price-total-text-wrap.row
+                              p.cart__select-price-total.text 650
+                              span.cart__select-price-total-text руб.
+                        ul.cart__select-price-description
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text 800
+                                span.cart__select-price-weight-text г.
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text 650
+                                span.cart__select-price-total-text руб.
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text 800
+                                span.cart__select-price-weight-text г.
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text 650
+                                span.cart__select-price-total-text руб.
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text 800
+                                span.cart__select-price-weight-text г.
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text 650
+                                span.cart__select-price-total-text руб.
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text 800
+                                span.cart__select-price-weight-text г.
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text 650
+                                span.cart__select-price-total-text руб.
+                          
+                      .cart__row-bottom-wrap.row.row--jc-sb
+                        .cart__calculate.row
+                          button.cart__calculate-button.cart__calculate-button--minus.grow(type="button")
+                          p.cart__calculate-number.text.text--center.grow 2
+                          button.cart__calculate-button.cart__calculate-button--plus.grow(type="button")
+                        button.cart__add-button(type="button") В корзину
+                
+      footer.page-footer
+        .footer-content.column
+          .container
+            .footer-content__description.row.row--jc-sb.grow
+              .footer-content__block-left.column
+                ul.socials.list.row
+                  li.socials__items
+                    a.socials__link.socials__link--vk(href="#")
+                  li.socials__items
+                    a.socials__link.socials__link--fb(href="#")
+                  li.socials__items
+                    a.socials__link.socials__link--od(href="#")
+                  li.socials__items
+                    a.socials__link.socials__link--g(href="#")
+                  li.socials__items
+                    a.socials__link.socials__link--tw(href="#")
+                  li.socials__items
+                    a.socials__link.socials__link--v(href="#")
+                  li.socials__items
+                    a.socials__link.socials__link--w(href="#")
+                p.footer-content__copyright.text © 2018 Осетинские пироги «Северная Осетия»
+              .footer-content__block-middle.column.column--jc-sb
+                .logo.logo--footer.row.row--jc-c.row--ai-c
+                  .logo__img-wrap
+                    img.logo__img(src="%=static=%img/content/logo.svg" alt="Логотип")
+                  .logo__description
+                    h2.logo__title.text «Вкусная Осетия»
+                    p.logo__text.text сеть пекарен осетинские пироги
+                ul.info.info--footer.list
+                  li.info__feedback.column.column--ai-c
+                    a.info__feedback-tel.text--td-none(href="tel:84953330060") 8 495 333-00-60
+                    a.info__feedback-link.text--td-none(href="#") Обратный звонок
+                ul.user-block__list.user-block__list--footer.list.row.row--jc-sb
+                  li.user-block__list-items
+                    a.user-block__list-link.text--td-none(href="#") Доставка
+                  li.user-block__list-items
+                    a.user-block__list-link.text--td-none(href="#") Оплата
+                  li.user-block__list-items
+                    a.user-block__list-link.text--td-none(href="#") Акции
+                  li.user-block__list-items
+                    a.user-block__list-link.text--td-none(href="#") Отзывы
+                  li.user-block__list-items
+                    a.user-block__list-link.text--td-none(href="#") Контакты
+              .footer-content__block-right.column
+                .footer-content__block-right-payment.row.row--jc-fe.row--ai-c
+                  a.footer-content__block-right-payment-link.footer-content__block-right-payment-link--mastercard.d-block(href="#")
+                  a.footer-content__block-right-payment-link.footer-content__block-right-payment-link--visa.d-block(href="#")
+                .footer-content__yandex-metrica
+                a.footer-content__row-bottom-developers.text--td-none.row.row--ai-c(href="#")
+                  span.footer-content__row-bottom-developers-text Создание и продвижение сайтов
+                  span.footer-content__row-bottom-developers-icon
+
+    script(src='%=static=%js/separate-js/svg4everybody.min.js')
+    script svg4everybody();
+
+    //- Main scripts. You can replace it, but I recommend you to leave it here
+    script(src='%=static=%js/main%=hash=%%=min=%.js')
