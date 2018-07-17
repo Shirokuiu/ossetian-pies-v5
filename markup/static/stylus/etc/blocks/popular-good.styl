@@ -1,0 +1,96 @@
+.popular-good
+  padding-top 18px
+  
+.popular-good__title
+  margin-bottom 15px
+  
+  font-family 'Gill-Sans-Nova', sans-serif
+  font-size 35px
+  line-height 42px
+  font-weight 500
+  color #3a3a3a
+  
+.popular-good__slider-wrap
+  padding-left 4%
+  padding-right 4%
+  
+.popular-good__slider
+  position relative
+  .owl-stage-outer
+    position relative
+    z-index 10
+    
+    padding-bottom 100px
+  .owl-dots
+    display none
+  .owl-nav
+    z-index 5
+    margin 0 !important
+    position: absolute;
+    top: 0;
+    left: -2%;
+    bottom: 0;
+    height: 52px;
+    margin: auto !important;
+    right: -2%;
+    display: flex;
+    justify-content: space-between;
+  .owl-prev,
+  .owl-next
+    margin 0 !important
+    span
+      position relative
+      
+      display block
+      width 25px
+      height 45px
+      
+      font-size 0
+      &:focus
+        outline none !important
+      &::before,
+      &::after
+        center-absolute()
+        
+        content ''
+        
+        left -3px
+        
+        width 133%
+        height 3px
+        
+        background-color #6a9df0
+      &::before
+        top 22px
+        
+        transform rotate(45deg)
+      &::after
+        top -22px
+        
+        transform rotate(-45deg)
+    &:hover
+      background-color transparent !important
+    &:focus
+      outline none !important
+  .owl-next
+    transform rotate(180deg)
+    
+@media(max-width 1600px)
+  .popular-good__slider .owl-nav
+    left -3%
+    right -3%
+    
+@media(max-width 1249px)
+  .popular-good__slider .owl-nav
+    top auto
+    bottom 22px
+    left 0
+    right 0
+    z-index 20
+    
+    justify-content space-around
+    
+@media(max-width 1200px)
+  .popular-good__title
+    font-size 28px
+    line-height 31px

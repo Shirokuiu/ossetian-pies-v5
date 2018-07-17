@@ -11,7 +11,7 @@ html(class="no-js", lang="ru")
         header.page-header
           .container
             .page-header__row-top.row.row--jc-sb
-              .logo.row.row--ai-c
+              .logo.logo--header.row.row--ai-c
                 .logo__img-wrap
                   img.logo__img(src="%=static=%img/content/logo.svg" alt="Логотип")
                 .logo__description
@@ -36,7 +36,7 @@ html(class="no-js", lang="ru")
                   a.info__feedback-tel.text--td-none(href="tel:84953330060") 8 495 333-00-60
                   a.info__feedback-link.text--td-none(href="#") Обратный звонок
             .page-header__row-middle
-              .user-block.row.row--jc-c.row--ai-c
+              .user-block.user-block--header.row.row--jc-c.row--ai-c
                 .user-block__dropdown-button-wrap.user-block__dropdown-button-wrap--open.row.row--ai-c
                   button.user-block__dropdown-button(type="button") Осетинские пироги
                   span.user-block__dropdown-button-span
@@ -57,14 +57,14 @@ html(class="no-js", lang="ru")
                     span.user-block__search-input-icon.d-block
                       != pugHelpers.Icon.call(locals, {iconName: 'search', className: 'search'})
                   button.user-block__search-button(type="button") Найти
-                .user-block__basket.row.row--ai-c
+                .user-block__basket.row.row--ai-c.basket-js
                   a.user-block__basket-link.text--td-none.text--center(href="#") Корзина
                   .user-block__basket-description
                     .user-block__basket-text-price-wrap.row
-                      p.user-block__basket-text.user-block__basket-text--price.text 2500
+                      p.user-block__basket-text.user-block__basket-text--price.text.basketTotalPrice-js 0
                       p.user-block__basket-text.user-block__basket-text--currency.text руб.
                     .user-block__basket-text-count-wrap.row
-                      p.user-block__basket-text.user-block__basket-text--count.text 12
+                      p.user-block__basket-text.user-block__basket-text--count.text.basketCount-js 0
                       p.user-block__basket-text.user-block__basket-text--goods.text товаров
           .page-header__row-bottom
             nav.main-nav
@@ -151,8 +151,8 @@ html(class="no-js", lang="ru")
             .container
               h2.carts-content__title.text.text--center Осетинские пироги с говядиной
               .carts-content__wrap.row.row--wrap
-                - for (let i = 0; i < 7; i++)
-                  .cart.column
+                - for (let i = 0; i < 6; i++)
+                  .cart.column.cart-js
                     .cart__img-wrap
                       img.cart__img(src="%=static=%img/content/cart-img.jpg")
                     .cart__description.column
@@ -175,14 +175,14 @@ html(class="no-js", lang="ru")
                             .cart__select-price-total-text-wrap.row
                               p.cart__select-price-total.text 650
                               span.cart__select-price-total-text руб.
-                        ul.cart__select-price-description
-                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list
+                        ul.cart__select-price-description.prices-js
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js.active
                             .cart__select-price-weight-wrap.row.row--ai-c
                               span.cart__select-price-weight-icon
                                 != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
                               .cart__select-price-weight-text-wrap.row
-                                p.cart__select-price-weight.text 800
-                                span.cart__select-price-weight-text г.
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="800 г")
+                                span.cart__select-price-weight-text 
                             .cart__select-price-size-wrap.row.row--ai-c
                               span.cart__select-price-size-icon
                               .cart__select-price-size-text-wrap.row
@@ -190,15 +190,15 @@ html(class="no-js", lang="ru")
                                 span.cart__select-price-size-text см
                             .cart__select-price-total-wrap.row.row--ai-c
                               .cart__select-price-total-text-wrap.row
-                                p.cart__select-price-total.text 650
+                                p.cart__select-price-total.text.price-basic-js(data-price="650")
                                 span.cart__select-price-total-text руб.
-                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
                             .cart__select-price-weight-wrap.row.row--ai-c
                               span.cart__select-price-weight-icon
                                 != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
                               .cart__select-price-weight-text-wrap.row
-                                p.cart__select-price-weight.text 800
-                                span.cart__select-price-weight-text г.
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="1000 г")
+                                span.cart__select-price-weight-text
                             .cart__select-price-size-wrap.row.row--ai-c
                               span.cart__select-price-size-icon
                               .cart__select-price-size-text-wrap.row
@@ -206,15 +206,15 @@ html(class="no-js", lang="ru")
                                 span.cart__select-price-size-text см
                             .cart__select-price-total-wrap.row.row--ai-c
                               .cart__select-price-total-text-wrap.row
-                                p.cart__select-price-total.text 650
+                                p.cart__select-price-total.text.price-basic-js(data-price="750")
                                 span.cart__select-price-total-text руб.
-                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
                             .cart__select-price-weight-wrap.row.row--ai-c
                               span.cart__select-price-weight-icon
                                 != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
                               .cart__select-price-weight-text-wrap.row
-                                p.cart__select-price-weight.text 800
-                                span.cart__select-price-weight-text г.
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="1200 г")
+                                span.cart__select-price-weight-text
                             .cart__select-price-size-wrap.row.row--ai-c
                               span.cart__select-price-size-icon
                               .cart__select-price-size-text-wrap.row
@@ -222,15 +222,15 @@ html(class="no-js", lang="ru")
                                 span.cart__select-price-size-text см
                             .cart__select-price-total-wrap.row.row--ai-c
                               .cart__select-price-total-text-wrap.row
-                                p.cart__select-price-total.text 650
+                                p.cart__select-price-total.text.price-basic-js(data-price="850")
                                 span.cart__select-price-total-text руб.
-                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
                             .cart__select-price-weight-wrap.row.row--ai-c
                               span.cart__select-price-weight-icon
                                 != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
                               .cart__select-price-weight-text-wrap.row
-                                p.cart__select-price-weight.text 800
-                                span.cart__select-price-weight-text г.
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="1400 г")
+                                span.cart__select-price-weight-text
                             .cart__select-price-size-wrap.row.row--ai-c
                               span.cart__select-price-size-icon
                               .cart__select-price-size-text-wrap.row
@@ -238,15 +238,779 @@ html(class="no-js", lang="ru")
                                 span.cart__select-price-size-text см
                             .cart__select-price-total-wrap.row.row--ai-c
                               .cart__select-price-total-text-wrap.row
-                                p.cart__select-price-total.text 650
+                                p.cart__select-price-total.text.price-basic-js(data-price="850")
                                 span.cart__select-price-total-text руб.
-                          
                       .cart__row-bottom-wrap.row.row--jc-sb
-                        .cart__calculate.row
-                          button.cart__calculate-button.cart__calculate-button--minus.grow(type="button")
-                          p.cart__calculate-number.text.text--center.grow 2
-                          button.cart__calculate-button.cart__calculate-button--plus.grow(type="button")
-                        button.cart__add-button(type="button") В корзину
+                        .cart__calculate.row.incDec-js
+                          button.cart__calculate-button.cart__calculate-button--minus.grow.dec-js(type="button")
+                          p.cart__calculate-number.text.text--center.grow.val-js 1
+                          button.cart__calculate-button.cart__calculate-button--plus.grow.inc-js(type="button")
+                        button.cart__add-button.cartAdd-js(type="button") В корзину
+          .carts-content
+            .container
+              h2.carts-content__title.text.text--center Осетинские пироги с птицей
+              .carts-content__wrap.row.row--wrap
+                - for (let i = 0; i < 6; i++)
+                  .cart.column.cart-js
+                    .cart__img-wrap
+                      img.cart__img(src="%=static=%img/content/cart-img.jpg")
+                    .cart__description.column
+                      a.cart__title.text--td-none(href="#") Осетинский пирог с говядиной
+                      .cart__select-price
+                        .cart__select-price-val.row.row--jc-sb.row--ai-c
+                          span.cart__select-price-val-arrow.d-block
+                          .cart__select-price-weight-wrap.row.row--ai-c
+                            span.cart__select-price-weight-icon
+                              != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                            .cart__select-price-weight-text-wrap.row
+                              p.cart__select-price-weight.text 800
+                              span.cart__select-price-weight-text г.
+                          .cart__select-price-size-wrap.row.row--ai-c
+                            span.cart__select-price-size-icon
+                            .cart__select-price-size-text-wrap.row
+                              p.cart__select-price-size.text 25
+                              span.cart__select-price-size-text см
+                          .cart__select-price-total-wrap.row.row--ai-c
+                            .cart__select-price-total-text-wrap.row
+                              p.cart__select-price-total.text 650
+                              span.cart__select-price-total-text руб.
+                        ul.cart__select-price-description.prices-js
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js.active
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="800 г")
+                                span.cart__select-price-weight-text 
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text.price-basic-js(data-price="650")
+                                span.cart__select-price-total-text руб.
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="1000 г")
+                                span.cart__select-price-weight-text
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text.price-basic-js(data-price="750")
+                                span.cart__select-price-total-text руб.
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="1200 г")
+                                span.cart__select-price-weight-text
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text.price-basic-js(data-price="850")
+                                span.cart__select-price-total-text руб.
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="1400 г")
+                                span.cart__select-price-weight-text
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text.price-basic-js(data-price="850")
+                                span.cart__select-price-total-text руб.
+                      .cart__row-bottom-wrap.row.row--jc-sb
+                        .cart__calculate.row.incDec-js
+                          button.cart__calculate-button.cart__calculate-button--minus.grow.dec-js(type="button")
+                          p.cart__calculate-number.text.text--center.grow.val-js 1
+                          button.cart__calculate-button.cart__calculate-button--plus.grow.inc-js(type="button")
+                        button.cart__add-button.cartAdd-js(type="button") В корзину
+          .features
+            .features__slider.owl-carousel.owl-theme
+              .features__slider-slide
+                span.features__slider-slide-icon-pizza.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'pizza-with-separate-slice', className: 'pizza-with-separate-slice'})
+                p.features__slider-slide-text.text.text--center Широкий
+                p.features__slider-slide-text.text.text--center ассортимент пирогов
+              .features__slider-slide
+                span.features__slider-slide-icon-seller.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'best-seller', className: 'best-seller'})
+                p.features__slider-slide-text.text.text--center Гарантия качества 
+                p.features__slider-slide-text.text.text--center продуктов
+              .features__slider-slide
+                span.features__slider-slide-icon-delivery.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'delivery', className: 'delivery'})
+                p.features__slider-slide-text.text.text--center Доставка от 45 минут
+                p.features__slider-slide-text.text.text--center точно в срок
+              .features__slider-slide
+                span.features__slider-slide-icon-map.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'map-location', className: 'map-location'})
+                p.features__slider-slide-text.text.text--center Доставка
+                p.features__slider-slide-text.text.text--center по всей Москве
+              .features__slider-slide
+                span.features__slider-slide-icon-mobile.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'mobile-shopping', className: 'mobile-shopping'})
+                p.features__slider-slide-text.text.text--center Удобный
+                p.features__slider-slide-text.text.text--center онлайн заказ
+              .features__slider-slide
+                span.features__slider-slide-icon-bake.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'the-tube-entrance', className: 'the-tube-entrance'})
+                p.features__slider-slide-text.text.text--center Пекарни
+                p.features__slider-slide-text.text.text--center находятся у метро
+              .features__slider-slide
+                span.features__slider-slide-icon-wallet.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'wallet', className: 'wallet'})
+                p.features__slider-slide-text.text.text--center Оплата наличными
+                p.features__slider-slide-text.text.text--center и по карте
+              .features__slider-slide
+                span.features__slider-slide-icon-pizza.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'pizza-with-separate-slice', className: 'pizza-with-separate-slice'})
+                p.features__slider-slide-text.text.text--center Широкий
+                p.features__slider-slide-text.text.text--center ассортимент пирогов
+              .features__slider-slide
+                span.features__slider-slide-icon-seller.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'best-seller', className: 'best-seller'})
+                p.features__slider-slide-text.text.text--center Гарантия качества 
+                p.features__slider-slide-text.text.text--center продуктов
+              .features__slider-slide
+                span.features__slider-slide-icon-delivery.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'delivery', className: 'delivery'})
+                p.features__slider-slide-text.text.text--center Доставка от 45 минут
+                p.features__slider-slide-text.text.text--center точно в срок
+              .features__slider-slide
+                span.features__slider-slide-icon-map.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'map-location', className: 'map-location'})
+                p.features__slider-slide-text.text.text--center Доставка
+                p.features__slider-slide-text.text.text--center по всей Москве
+              .features__slider-slide
+                span.features__slider-slide-icon-mobile.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'mobile-shopping', className: 'mobile-shopping'})
+                p.features__slider-slide-text.text.text--center Удобный
+                p.features__slider-slide-text.text.text--center онлайн заказ
+              .features__slider-slide
+                span.features__slider-slide-icon-bake.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'the-tube-entrance', className: 'the-tube-entrance'})
+                p.features__slider-slide-text.text.text--center Пекарни
+                p.features__slider-slide-text.text.text--center находятся у метро
+              .features__slider-slide
+                span.features__slider-slide-icon-wallet.d-block
+                  != pugHelpers.Icon.call(locals, {iconName: 'wallet', className: 'wallet'})
+                p.features__slider-slide-text.text.text--center Оплата наличными
+                p.features__slider-slide-text.text.text--center и по карте
+          .carts-content
+            .container
+              h2.carts-content__title.text.text--center Осетинские пироги с капустой
+              .carts-content__wrap.row.row--wrap
+                - for (let i = 0; i < 6; i++)
+                  .cart.column.cart-js
+                    .cart__img-wrap
+                      img.cart__img(src="%=static=%img/content/cart-img.jpg")
+                    .cart__description.column
+                      a.cart__title.text--td-none(href="#") Осетинский пирог с говядиной
+                      .cart__select-price
+                        .cart__select-price-val.row.row--jc-sb.row--ai-c
+                          span.cart__select-price-val-arrow.d-block
+                          .cart__select-price-weight-wrap.row.row--ai-c
+                            span.cart__select-price-weight-icon
+                              != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                            .cart__select-price-weight-text-wrap.row
+                              p.cart__select-price-weight.text 800
+                              span.cart__select-price-weight-text г.
+                          .cart__select-price-size-wrap.row.row--ai-c
+                            span.cart__select-price-size-icon
+                            .cart__select-price-size-text-wrap.row
+                              p.cart__select-price-size.text 25
+                              span.cart__select-price-size-text см
+                          .cart__select-price-total-wrap.row.row--ai-c
+                            .cart__select-price-total-text-wrap.row
+                              p.cart__select-price-total.text 650
+                              span.cart__select-price-total-text руб.
+                        ul.cart__select-price-description.prices-js
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js.active
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="800 г")
+                                span.cart__select-price-weight-text 
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text.price-basic-js(data-price="650")
+                                span.cart__select-price-total-text руб.
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="1000 г")
+                                span.cart__select-price-weight-text
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text.price-basic-js(data-price="750")
+                                span.cart__select-price-total-text руб.
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="1200 г")
+                                span.cart__select-price-weight-text
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text.price-basic-js(data-price="850")
+                                span.cart__select-price-total-text руб.
+                          li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text.price-weight-js(data-weight="1400 г")
+                                span.cart__select-price-weight-text
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text.price-basic-js(data-price="850")
+                                span.cart__select-price-total-text руб.
+                      .cart__row-bottom-wrap.row.row--jc-sb
+                        .cart__calculate.row.incDec-js
+                          button.cart__calculate-button.cart__calculate-button--minus.grow.dec-js(type="button")
+                          p.cart__calculate-number.text.text--center.grow.val-js 1
+                          button.cart__calculate-button.cart__calculate-button--plus.grow.inc-js(type="button")
+                        button.cart__add-button.cartAdd-js(type="button") В корзину
+          .composition
+            .container
+              h2.composition__title.text.text--center Разнообразие начинок
+            .composition__slider-wrap
+              .composition__slider.owl-carousel.owl-theme
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img1.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Говядина
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img2.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Курица
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img3.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Листья, зелень
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img4.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Осетинский сыр
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img5.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Капуста
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img6.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Лосось
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img7.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Сладкие начинки
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img1.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Говядина
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img2.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Курица
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img3.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Листья, зелень
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img4.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Осетинский сыр
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img5.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Капуста
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img6.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Лосось
+                .composition__slider-slide.column.column--ai-c
+                  .composition__slider-img-wrap
+                    img.composition__slider-img(src="%=static=%img/content/composition-img7.jpg" alt="Картинка")
+                  a.composition__slider-link.text--td-none.text--center.d-block(href="#") Сладкие начинки
+          .description.description--no-bg
+            .container
+              h2.description__title.text.text--center Осетинские пироги с бесплатной доставкой в Москве
+              p.description__text.text Заказать осетинские пироги в Москве с доставкой можно с 8:00 до 21:00 по телефону +7 (495) 324-90-00 или круглосуточно на сайте через корзину. На ваш выбор мы предлагаем услуги 4 пекарен, в которых выпекаются осетинские пироги на любой вкус - сладкие, мясные, с капустой, сырные и другие. Заказ осетинских пирогов в Москве с доставкой на дом и в офис выполняется оперативно: приготовление занимает 25-45 минут, а доставка точно ко времени за 45 минут! Вы получите их еще горячими, только с печи!
+              ul.description__list.list.row.row--jc-c.row--wrap
+                - for (let i = 0; i < 6; i++)
+                  li.description__list-items Осетинские пироги на день рождения
+            .description__border
+          .table
+            .container
+              h2.table__title.text.text--center Стоимость осетинских пирогов
+            .table__description-wrap
+              .container
+                table.table__description
+                  tr.table__tr.table__tr--no-hover.table__tr--weight
+                    td.table__td.table__td--title
+                    td.table__td.table__td--title.table__td--middle
+                      p.table__text.text.text--center Вес пирога
+                    td.table__td.table__td--title
+                  tr.table__tr.table__tr--no-hover.table__tr--title
+                    td.table__td.table__td--title-text.table__td--first
+                      p.table__text.text Наименование пирога
+                    td.table__td.row
+                      p.table__text.text.text--center 800 г
+                      p.table__text.text.text--center 1 000 г
+                      p.table__text.text.text--center 1 200 г
+                      p.table__text.text.text--center 1 400 г
+                    td.table__td
+                      p.table__text.text.text--center Начинка осетинского  пирога
+                  tr.table__tr.cart-js
+                    td.table__td.table__td--title-text
+                      p.table__text.text Осетинский пирог с говядиной
+                      .table__td-mobile-info.column
+                        ul.table__td-mobile-prices-list.list.row.prices-js
+                          li.table__td-mobile-prices-items.grow.prices-child-js.active
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="800 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="650")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1000 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="700")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1200 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="750")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1400 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="800")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                        p.table__td-mobile-description-text.text.text--center Рубленая говядина, жареный лук, перец, соль
+                        button.table__text-button.table__text-button--mobile.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                    td.table__td.table__td--tablet-hidden.row.prices-js
+                      .table__text-wrap.prices-child-js.active
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="650")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="700")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="750")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="800")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                    td.table__td.table__td--filling 
+                      p.table__text.text Рубленая говядина, жареный лук, перец, соль
+                  tr.table__tr.cart-js
+                    td.table__td.table__td--title-text
+                      p.table__text.text Осетинский пирог с говядиной и грибами
+                      .table__td-mobile-info.column
+                        ul.table__td-mobile-prices-list.list.row.prices-js
+                          li.table__td-mobile-prices-items.grow.prices-child-js.active
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="800 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="650")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1000 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="700")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1200 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="750")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1400 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="800")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                        p.table__td-mobile-description-text.text.text--center Рубленая говядина, жареный лук, перец, соль
+                        button.table__text-button.table__text-button--mobile.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                    td.table__td.table__td--tablet-hidden.row.prices-js
+                      .table__text-wrap.prices-child-js.active
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="650")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="700")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="750")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="800")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                    td.table__td.table__td--filling 
+                      p.table__text.text Рубленая говядина, картофель, грибы, жареный лук, перец, соль
+                  tr.table__tr.cart-js
+                    td.table__td.table__td--title-text
+                      p.table__text.text Осетинский пирог с говядиной
+                      .table__td-mobile-info.column
+                        ul.table__td-mobile-prices-list.list.row.prices-js
+                          li.table__td-mobile-prices-items.grow.prices-child-js.active
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="800 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="650")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1000 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="700")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1200 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="750")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1400 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="800")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                        p.table__td-mobile-description-text.text.text--center Рубленая говядина, жареный лук, перец, соль
+                        button.table__text-button.table__text-button--mobile.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                    td.table__td.table__td--tablet-hidden.row.prices-js
+                      .table__text-wrap.prices-child-js.active
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="650")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="700")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="750")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="800")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                    td.table__td.table__td--filling 
+                      p.table__text.text Рубленая говядина, жареный лук, перец, соль
+                  tr.table__tr.cart-js
+                    td.table__td.table__td--title-text
+                      p.table__text.text Осетинский пирог с говядиной
+                      .table__td-mobile-info.column
+                        ul.table__td-mobile-prices-list.list.row.prices-js
+                          li.table__td-mobile-prices-items.grow.prices-child-js.active
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="800 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="650")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1000 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="700")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1200 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="750")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1400 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="800")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                        p.table__td-mobile-description-text.text.text--center Рубленая говядина, жареный лук, перец, соль
+                        button.table__text-button.table__text-button--mobile.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                    td.table__td.table__td--tablet-hidden.row.prices-js
+                      .table__text-wrap.prices-child-js.active
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="650")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="700")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="750")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="800")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                    td.table__td.table__td--filling
+                      p.table__text.text Рубленая говядина, жареный лук, перец, соль
+                  tr.table__tr.cart-js
+                    td.table__td.table__td--title-text
+                      p.table__text.text Осетинский пирог с говядиной
+                      .table__td-mobile-info.column
+                        ul.table__td-mobile-prices-list.list.row.prices-js
+                          li.table__td-mobile-prices-items.grow.prices-child-js.active
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="800 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="650")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1000 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="700")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1200 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="750")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                          li.table__td-mobile-prices-items.grow.prices-child-js
+                            p.table__td-mobile-prices-item-weight.text.text--center.price-weight-js(data-weight="1400 г")
+                            .table__td-mobile-prices-item-price-wrap.row.row--jc-c
+                              p.table__td-mobile-prices-item-price.text.price-basic-js(data-price="800")
+                              p.table__td-mobile-prices-item-price-currency.text руб.
+                        p.table__td-mobile-description-text.text.text--center Рубленая говядина, жареный лук, перец, соль
+                        button.table__text-button.table__text-button--mobile.cartAdd-js.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                    td.table__td.table__td--tablet-hidden.row.prices-js
+                      .table__text-wrap.prices-child-js.active
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="650")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="700")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="750")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                      .table__text-wrap.prices-child-js
+                        .table__text-price-wrap.row.row--jc-c
+                          p.table__text.text.text--center.price-basic-js(data-price="800")
+                          span.table__text-span руб.
+                        button.table__text-button.cartAdd-js(type="button") Купить
+                          span.table__text-button-icon.d-block
+                            != pugHelpers.Icon.call(locals, {iconName: 'shopping-basket', className: 'shopping-basket'})
+                    td.table__td.table__td--filling 
+                      p.table__text.text Рубленая говядина, жареный лук, перец, соль
+          .popular-good
+            .container
+              h2.popular-good__title.text.text--center Сегодня уже заказали:
+            .popular-good__slider-wrap
+              .popular-good__slider.owl-carousel.owl-theme
+                - for (let i = 0; i < 12; i++)
+                  .popular-good__slider-slide
+                    .cart.cart--popular-good.column.cart-js
+                      .cart__img-wrap
+                        span.cart__popular-good-indicator
+                          p.cart__popular-good-indicator-text.text.text--center 28
+                            span шт.
+                        img.cart__img(src="%=static=%img/content/cart-img.jpg")
+                      .cart__description.column
+                        a.cart__title.text--td-none(href="#") Осетинский пирог с говядиной
+                        .cart__select-price
+                          .cart__select-price-val.row.row--jc-sb.row--ai-c
+                            span.cart__select-price-val-arrow.d-block
+                            .cart__select-price-weight-wrap.row.row--ai-c
+                              span.cart__select-price-weight-icon
+                                != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                              .cart__select-price-weight-text-wrap.row
+                                p.cart__select-price-weight.text 800
+                                span.cart__select-price-weight-text г.
+                            .cart__select-price-size-wrap.row.row--ai-c
+                              span.cart__select-price-size-icon
+                              .cart__select-price-size-text-wrap.row
+                                p.cart__select-price-size.text 25
+                                span.cart__select-price-size-text см
+                            .cart__select-price-total-wrap.row.row--ai-c
+                              .cart__select-price-total-text-wrap.row
+                                p.cart__select-price-total.text 650
+                                span.cart__select-price-total-text руб.
+                          ul.cart__select-price-description.prices-js
+                            li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js.active
+                              .cart__select-price-weight-wrap.row.row--ai-c
+                                span.cart__select-price-weight-icon
+                                  != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                                .cart__select-price-weight-text-wrap.row
+                                  p.cart__select-price-weight.text.price-weight-js(data-weight="800 г")
+                                  span.cart__select-price-weight-text 
+                              .cart__select-price-size-wrap.row.row--ai-c
+                                span.cart__select-price-size-icon
+                                .cart__select-price-size-text-wrap.row
+                                  p.cart__select-price-size.text 25
+                                  span.cart__select-price-size-text см
+                              .cart__select-price-total-wrap.row.row--ai-c
+                                .cart__select-price-total-text-wrap.row
+                                  p.cart__select-price-total.text.price-basic-js(data-price="650")
+                                  span.cart__select-price-total-text руб.
+                            li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
+                              .cart__select-price-weight-wrap.row.row--ai-c
+                                span.cart__select-price-weight-icon
+                                  != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                                .cart__select-price-weight-text-wrap.row
+                                  p.cart__select-price-weight.text.price-weight-js(data-weight="1000 г")
+                                  span.cart__select-price-weight-text
+                              .cart__select-price-size-wrap.row.row--ai-c
+                                span.cart__select-price-size-icon
+                                .cart__select-price-size-text-wrap.row
+                                  p.cart__select-price-size.text 25
+                                  span.cart__select-price-size-text см
+                              .cart__select-price-total-wrap.row.row--ai-c
+                                .cart__select-price-total-text-wrap.row
+                                  p.cart__select-price-total.text.price-basic-js(data-price="750")
+                                  span.cart__select-price-total-text руб.
+                            li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
+                              .cart__select-price-weight-wrap.row.row--ai-c
+                                span.cart__select-price-weight-icon
+                                  != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                                .cart__select-price-weight-text-wrap.row
+                                  p.cart__select-price-weight.text.price-weight-js(data-weight="1200 г")
+                                  span.cart__select-price-weight-text
+                              .cart__select-price-size-wrap.row.row--ai-c
+                                span.cart__select-price-size-icon
+                                .cart__select-price-size-text-wrap.row
+                                  p.cart__select-price-size.text 25
+                                  span.cart__select-price-size-text см
+                              .cart__select-price-total-wrap.row.row--ai-c
+                                .cart__select-price-total-text-wrap.row
+                                  p.cart__select-price-total.text.price-basic-js(data-price="850")
+                                  span.cart__select-price-total-text руб.
+                            li.cart__select-price-description-items.row.row--jc-sb.row--ai-c.list.prices-child-js
+                              .cart__select-price-weight-wrap.row.row--ai-c
+                                span.cart__select-price-weight-icon
+                                  != pugHelpers.Icon.call(locals, {iconName: 'scale', className: 'scale'})
+                                .cart__select-price-weight-text-wrap.row
+                                  p.cart__select-price-weight.text.price-weight-js(data-weight="1400 г")
+                                  span.cart__select-price-weight-text
+                              .cart__select-price-size-wrap.row.row--ai-c
+                                span.cart__select-price-size-icon
+                                .cart__select-price-size-text-wrap.row
+                                  p.cart__select-price-size.text 25
+                                  span.cart__select-price-size-text см
+                              .cart__select-price-total-wrap.row.row--ai-c
+                                .cart__select-price-total-text-wrap.row
+                                  p.cart__select-price-total.text.price-basic-js(data-price="850")
+                                  span.cart__select-price-total-text руб.
+                        .cart__row-bottom-wrap.row.row--jc-sb
+                          .cart__calculate.row.incDec-js
+                            button.cart__calculate-button.cart__calculate-button--minus.grow.dec-js(type="button")
+                            p.cart__calculate-number.text.text--center.grow.val-js 1
+                            button.cart__calculate-button.cart__calculate-button--plus.grow.inc-js(type="button")
+                          button.cart__add-button.cartAdd-js(type="button") В корзину
+                  
                 
       footer.page-footer
         .footer-content.column
@@ -302,6 +1066,8 @@ html(class="no-js", lang="ru")
 
     script(src='%=static=%js/separate-js/svg4everybody.min.js')
     script svg4everybody();
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='%=static=%js/separate-js/owl.carousel.min.js')
 
     //- Main scripts. You can replace it, but I recommend you to leave it here
     script(src='%=static=%js/main%=hash=%%=min=%.js')

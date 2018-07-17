@@ -1,0 +1,103 @@
+.features
+  margin-bottom 25px
+  padding-top 43px
+  padding-left 4%
+  padding-right 4%
+  padding-bottom 40px
+  
+  background-color #fff8da
+  
+.features__slider
+  position relative
+  .owl-stage-outer
+    position relative
+    z-index 10
+  .owl-dots
+    display none
+  .owl-nav
+    z-index 5
+    margin 0 !important
+    position: absolute;
+    top: 0;
+    left: -2%;
+    bottom: 0;
+    height: 52px;
+    margin: auto !important;
+    right: -2%;
+    display: flex;
+    justify-content: space-between;
+  .owl-prev,
+  .owl-next
+    margin 0 !important
+    span
+      position relative
+      
+      display block
+      width 25px
+      height 45px
+      
+      font-size 0
+      &:focus
+        outline none !important
+      &::before,
+      &::after
+        center-absolute()
+        
+        content ''
+        
+        left -3px
+        
+        width 133%
+        height 3px
+        
+        background-color #6a9df0
+      &::before
+        top 22px
+        
+        transform rotate(45deg)
+      &::after
+        top -22px
+        
+        transform rotate(-45deg)
+    &:hover
+      background-color transparent !important
+    &:focus
+      outline none !important
+  .owl-next
+    transform rotate(180deg)
+  
+.features__slider-slide-icon-pizza,
+.features__slider-slide-icon-seller,
+.features__slider-slide-icon-delivery,
+.features__slider-slide-icon-map,
+.features__slider-slide-icon-mobile,
+.features__slider-slide-icon-bake,
+.features__slider-slide-icon-wallet
+  width 80px
+  height 80px
+  margin 0 auto 19px auto
+  .pizza-with-separate-slice,
+  .best-seller,
+  .delivery,
+  .map-location,
+  .mobile-shopping,
+  .the-tube-entrance,
+  .wallet
+    width 80px
+    height 80px
+    
+    fill #2594fc
+    
+.features__slider-slide-icon-delivery
+  width 100px
+  height 100px
+  margin-bottom 0
+  .delivery
+    width 100px
+    height 100px
+    
+.features__slider-slide-text
+  font-size 19px
+  line-height 23px
+  font-weight 400
+  color #4d4d4d

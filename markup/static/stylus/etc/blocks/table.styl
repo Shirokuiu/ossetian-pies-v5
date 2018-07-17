@@ -1,0 +1,199 @@
+.table__title
+  margin-bottom 16px
+  
+  font-family 'Gill-Sans-Nova', sans-serif
+  font-size 35px
+  line-height 42px
+  font-weight 500
+  color #3a3a3a
+
+.table__description-wrap
+  padding 26px 0
+  
+  background-color #fff5ee
+  
+.table__description
+  width 100%
+  
+  background-color #ffffff
+  
+.table__tr
+  cursor pointer
+  &:hover
+    background-color #e65046
+    .table__td
+      color #ffffff
+  &--no-hover
+    cursor default
+    .table__td
+      font-size 15px
+      line-height 18px
+      color #808080
+    &:hover
+      background-color transparent
+      .table__td
+        color #808080
+  &--title
+    .table__text
+      border-bottom 1px solid #eaeaea
+    
+.table__td
+  font-size 16px
+  line-height 19px
+  font-weight 400
+  color #4d4d4d
+  &--title-text
+    padding-left 25px
+    .table__text
+      padding-left 20px
+  &--filling
+    padding-left 10%
+  &--first
+    width 32%
+  &--middle
+    width 26%
+    
+.table__text-wrap
+  position relative
+  
+  box-sizing border-box
+  width 100%
+  padding 20px 0
+  .table__text
+    width auto
+    padding 0
+  &:hover
+    .table__text-button
+      display flex
+      flex-direction row-reverse
+      align-items center
+  
+.table__text
+  box-sizing border-box
+  width 100%
+  padding 20px 0
+  
+.table__text-button
+  reset-button()
+  
+  center-absolute()
+  
+  display none
+  box-sizing border-box
+  width 100%
+  height 39px
+  padding-right 13px
+  
+  font-size 16px
+  line-height 19px
+  font-weight 400
+  color #ffffff
+  
+  background-color #669af0
+  
+  border-radius 5px
+  &--mobile
+    position static
+    
+    display flex
+    flex-direction row-reverse
+    justify-content center
+    align-items center
+    margin: 0 10px;
+    width: auto;
+    .table__text-button-icon
+      margin-left 0
+      margin-right 10px
+  
+.table__text-button-icon
+  width 24px
+  height 24px
+  margin-left 11px
+  margin-right auto
+  .shopping-basket
+    width 24px
+    height 24px
+    
+    fill #ffffff
+  
+.table__text-span
+  margin-left 5px
+  
+.table__td-mobile-info
+  display none
+  
+@media(max-width 1610px)
+  .table__td--filling
+    padding-left 6%
+    
+@media(max-width 1430px)
+  .table__td--first
+    width 28%
+    
+  .table__text-wrap
+    width 105px
+    
+  .table__td--filling
+    padding-left 2%
+    
+@media(max-width 1360px)
+  .table__td--title-text
+    display flex
+    flex-direction column
+    padding-left 0
+    padding-bottom 15px
+    
+  .table__text
+    padding 14px 0
+    
+    font-weight 600
+    
+  .table__tr
+    &:hover
+      background-color transparent
+      .table__td
+        color #4d4d4d
+    &--weight
+      display none
+    &--title
+      display none
+      
+  .table__td
+    &--tablet-hidden
+      display none
+    &--filling
+      display none
+      
+  .table__td--title-text .table__text
+    padding 10px
+    
+  .table__text
+    text-align center
+    
+  .table__td-mobile-info
+    display flex
+    
+  .table__td-mobile-prices-list
+    margin-bottom 15px
+    
+  .table__td-mobile-prices-item-weight
+    margin-bottom 10px
+    
+  .table__td-mobile-prices-item-price-currency
+    margin-left 5px
+    
+  .table__td-mobile-description-text
+    margin-bottom 15px
+    
+  .table__td-mobile-prices-items
+    padding 5px 0
+    &.active
+      background-color #e65046
+      .table__td-mobile-prices-item-weight,
+      .table__td-mobile-prices-item-price-wrap
+        color #ffffff
+  
+@media(max-width 1200px)
+  .table__title
+    font-size 28px
+    line-height 31px
